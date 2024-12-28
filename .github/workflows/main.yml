@@ -1,62 +1,27 @@
-name: Vercel Deployment
-
+name: Vercel Production Deployment
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  Deploy-Production:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
+      
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
-
+      
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build Project
+      
+      - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Create Fallback Branch
-        run: |
-          git checkout -b deployment-fallback
-          git push origin deployment-fallback --force
-
-      - name: Deploy to Vercel
-        id: deploy
-        run: |
-          DEPLOYMENT_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
-          echo "::set-output name=url::$DEPLOYMENT_URL"
-
-      - name: Deployment Status Check
-        id: status
-        run: |
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" ${{ steps.deploy.outputs.url }})
-          if [ "$HTTP_STATUS" -eq 200 ]; then
-            echo "::set-output name=status::success"
-          else
-            echo "::set-output name=status::failure"
-          fi
-
-      - name: Fallback if Deployment Fails
-        if: steps.status.outputs.status != 'success'
-        run: |
-          git fetch origin deployment-fallback
-          git checkout deployment-fallback
-          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
