@@ -2,28 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import { getImages, type Image } from '../utils/image-service'
+import NextImage from 'next/image'
 
 const ImagePlaceholder = () => (
-  <svg
-    className="w-full h-full"
-    viewBox="0 0 100 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="100" height="100" fill="#1a1a1a" />
-    <path
-      d="M30 40 L45 55 L30 70"
-      stroke="#333"
-      strokeWidth="2"
-      fill="none"
-    />
-    <path
-      d="M70 40 L55 55 L70 70"
-      stroke="#333"
-      strokeWidth="2"
-      fill="none"
-    />
-  </svg>
+  <div className="w-full h-full bg-neutral-900 animate-pulse rounded-lg" />
 )
 
 export default function ImageGallery() {
@@ -36,33 +18,55 @@ export default function ImageGallery() {
   }, [])
 
   async function fetchImages() {
-    console.log('Fetching images...')  // Debug log
     const { data, error } = await getImages()
-    console.log('Received data:', data)  // Debug log
-    console.log('Received error:', error)  // Debug log
-    if (error) setError(error.message)
-    if (data) setImages(data)
+    if (error) {
+      setError(error.message)
+      console.error('Error fetching images:', error)
+    }
+    if (data) {
+      setImages(data)
+    }
     setLoading(false)
   }
 
-  // Create an array of 9 placeholder items
-  const placeholderGrid = Array(9).fill(null)
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-red-500">Error loading gallery: {error}</p>
+      </div>
+    )
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {placeholderGrid.map((_, index) => (
-        <div 
-          key={index} 
-          className="aspect-square relative group overflow-hidden bg-neutral-900 rounded-lg"
-        >
-          <ImagePlaceholder />
-          {loading && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-sm text-gray-500">Loading...</div>
-            </div>
-          )}
-        </div>
-      ))}
+      {loading ? (
+        // Show placeholders while loading
+        Array(9).fill(null).map((_, index) => (
+          <div 
+            key={`placeholder-${index}`} 
+            className="aspect-square relative overflow-hidden rounded-lg"
+          >
+            <ImagePlaceholder />
+          </div>
+        ))
+      ) : (
+        // Show actual images
+        images.map((image, index) => (
+          <div 
+            key={image.name}
+            className="aspect-square relative group overflow-hidden rounded-lg bg-neutral-900"
+          >
+            <NextImage
+              src={image.publicUrl}
+              alt={image.name}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={index < 6} // Load first 6 images immediately
+            />
+          </div>
+        ))
+      )}
     </div>
   )
 }
