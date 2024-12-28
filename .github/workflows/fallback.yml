@@ -1,0 +1,32 @@
+name: Fallback Deployment
+
+on:
+  workflow_run:
+    workflows: ["Main Deployment"]
+    types:
+      - failed
+
+jobs:
+  fallback:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: deployment-fallback
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Deploy fallback version
+        run: |
+          # Add your fallback deployment commands here
+          echo "Deploying fallback version"
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}

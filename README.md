@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Dolorosa Tattoo Studio
 
-## Getting Started
+© 2024 The Dolorosa Tattoo Studio. All rights reserved.
 
-First, run the development server:
+This website and its contents are protected under copyright law. No part of this website, including but not limited to text, images, designs, and code, may be reproduced, distributed, or transmitted in any form or by any means without prior written permission from The Dolorosa Tattoo Studio.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Legal Notice
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- All artwork, designs, and images are property of The Dolorosa Tattoo Studio and its artists
+- Unauthorized use, reproduction, or distribution is strictly prohibited
+- All tattoo designs are custom and unique to each client
+- Website design and implementation by The Dolorosa Tattoo Studio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technical Information
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Built with:
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Supabase
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For any inquiries regarding the website or its contents, please contact:
+[Contact Information to be provided by The Dolorosa]
