@@ -1,25 +1,60 @@
-# The Dolorosa Tattoo Studio
+# Next.js Enterprise Boilerplate
 
-© 2024 The Dolorosa Tattoo Studio. All rights reserved.
+A modern, performance-focused Next.js template for rapidly building production-ready web applications.
 
-This website and its contents are protected under copyright law. No part of this website, including but not limited to text, images, designs, and code, may be reproduced, distributed, or transmitted in any form or by any means without prior written permission from The Dolorosa Tattoo Studio.
+## Features
 
-## Legal Notice
+- ⚡ Next.js 14 with App Router
+- 🔒 TypeScript for type safety
+- 🎨 Tailwind CSS for styling
+- 🔍 ESLint configured
+- 📱 Responsive by default
+- 🚀 Optimized for Vercel deployment
+- 🧩 Ready-to-use components
+- 🔄 Environment variable setup
 
-- All artwork, designs, and images are property of The Dolorosa Tattoo Studio and its artists
-- Unauthorized use, reproduction, or distribution is strictly prohibited
-- All tattoo designs are custom and unique to each client
-- Website design and implementation by The Dolorosa Tattoo Studio
+## Quick Start
 
-## Technical Information
+1. Click "Deploy" to clone and deploy to Vercel:
 
-Built with:
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Supabase
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/nextjs-template)
 
-## Contact
+2. Clone the repository locally:
+```bash
+git clone [your-repo-url]
+cd [your-project-name]
+```
 
-For any inquiries regarding the website or its contents, please contact:
-[Contact Information to be provided by The Dolorosa]
+3. Install dependencies:
+```bash
+npm install
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+```plaintext
+# Add your environment variables here
+```
+
+## Project Structure
+
+```
+├── app/              # App router pages
+├── components/       # Reusable components
+├── public/          # Static assets
+└── styles/          # Global styles
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT License - feel free to use this template for any project.
