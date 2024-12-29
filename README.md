@@ -1,60 +1,58 @@
-# Next.js Enterprise Boilerplate
+# The Dolorosa Tattoo Studio Website Redesign
 
-A modern, performance-focused Next.js template for rapidly building production-ready web applications.
+A modern, luxury-focused web application built for The Dolorosa Tattoo Studio, emphasizing artistic excellence and client experience.
 
-## Features
+## Overview
 
-- ⚡ Next.js 14 with App Router
-- 🔒 TypeScript for type safety
-- 🎨 Tailwind CSS for styling
-- 🔍 ESLint configured
-- 📱 Responsive by default
-- 🚀 Optimized for Vercel deployment
-- 🧩 Ready-to-use components
-- 🔄 Environment variable setup
+This repository contains the source code for The Dolorosa Tattoo Studio's website redesign, featuring:
 
-## Quick Start
+- High-performance Next.js 14 implementation
+- Custom animation system using Framer Motion
+- Responsive, mobile-first design
+- Luxury-focused UI/UX
+- Artist portfolio integration
+- Booking system integration
+- Content management system
 
-1. Click "Deploy" to clone and deploy to Vercel:
+## Technical Stack
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/nextjs-template)
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Supabase Backend
 
-2. Clone the repository locally:
-```bash
-git clone [your-repo-url]
-cd [your-project-name]
-```
+## Intellectual Property Notice
 
-3. Install dependencies:
-```bash
-npm install
-```
+© 2024 Develop in Rest LLC. All Rights Reserved.
 
-4. Start the development server:
-```bash
-npm run dev
-```
+This repository and all its contents, including but not limited to:
+- Source code
+- Design elements
+- Implementation methods
+- Custom components
+- Business logic
+- Documentation
 
-## Environment Variables
+are the exclusive intellectual property of Develop in Rest LLC. All rights are reserved, and no part of this repository may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of Develop in Rest LLC.
 
-Create a `.env.local` file in the root directory with the following variables:
-```plaintext
-# Add your environment variables here
-```
+The Dolorosa Tattoo Studio brand assets, logos, and related content are the property of The Dolorosa Tattoo Studio and are used under license by Develop in Rest LLC.
 
-## Project Structure
+## Brand Implementation
 
-```
-├── app/              # App router pages
-├── components/       # Reusable components
-├── public/          # Static assets
-└── styles/          # Global styles
-```
+The website design implements The Dolorosa Tattoo Studio's luxury brand identity through:
+- Minimalist, high-end design language
+- Custom animations and transitions
+- Premium user experience
+- Integrated booking and consultation system
+- Artist portfolio showcases
 
-## Contributing
+## Legal Notice
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+This is a proprietary development project by Develop in Rest LLC for The Dolorosa Tattoo Studio. Unauthorized use, reproduction, or distribution is strictly prohibited and may result in legal action.
 
-## License
+For inquiries regarding this repository or its contents, please contact Develop in Rest LLC.
 
-MIT License - feel free to use this template for any project.
+---
+
+Built and maintained by Develop in Rest LLC for The Dolorosa Tattoo Studio
