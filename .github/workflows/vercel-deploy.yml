@@ -1,8 +1,4 @@
 name: Vercel Production Deployment
-# Ensure these secrets are set in GitHub:
-# VERCEL_TOKEN: From https://vercel.com/account/tokens
-# VERCEL_ORG_ID: dZnFBdtMgFXrjoSqYnWXEBrL
-# VERCEL_PROJECT_ID: prj_qzEPpeoVPKEvYb9ZzBOjKmuFp9w7
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
