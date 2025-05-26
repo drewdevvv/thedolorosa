@@ -55,4 +55,4 @@ For inquiries regarding this repository or its contents, please contact Develop 
 
 ---
 
-Built and maintained by Develop in Rest LLC for The Dolorosa Tattoo Studio
+Built and maintained by Develop in Rest for The Dolorosa Tattoo Studio
