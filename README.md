@@ -24,7 +24,7 @@ This repository contains the source code for The Dolorosa Tattoo Studio's websit
 
 ## Intellectual Property Notice
 
-© 2024 Develop in Rest LLC. All Rights Reserved.
+© 2025 Develop in Rest Nonprofit. All Rights Reserved.
 
 This repository and all its contents, including but not limited to:
 - Source code
